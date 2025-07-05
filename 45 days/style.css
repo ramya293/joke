@@ -1,0 +1,113 @@
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #555;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+}
+
+nav ul li a:hover {
+    background-color: #777;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    padding: 1rem;
+    gap: 1rem; /* Space between sections */
+}
+
+.content-section {
+    flex: 2; /* Takes up more space */
+    min-width: 300px; /* Ensures it doesn't get too small */
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar-section {
+    flex: 1; /* Takes up less space */
+    min-width: 200px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (e.g., tablets in portrait, large phones) */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Stack navigation items */
+        width: 100%;
+    }
+
+    main {
+        flex-direction: column; /* Stack main sections vertically */
+    }
+
+    .content-section, .sidebar-section {
+        flex: auto; /* Allow sections to take full width */
+        min-width: unset; /* Remove min-width for smaller screens */
+    }
+}
+
+/* For screens smaller than 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-section p, .sidebar-section p {
+        font-size: 0.9rem;
+    }
+}
